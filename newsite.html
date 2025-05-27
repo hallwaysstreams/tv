@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallways Streams - Premium IPTV Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid #e94560;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #e94560;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price {
+            font-size: 2rem;
+            color: #e94560;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: #1a1a2e;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            color: #e94560;
+            margin-bottom: 1rem;
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #d13354;
+            transform: scale(1.05);
+        }
+        
+        .btn-whatsapp {
+            background: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+        
+        .trial-btn {
+            background: #0f3460;
+        }
+        
+        .trial-btn:hover {
+            background: #1a1a2e;
+        }
+        
+        footer {
+            background: #1a1a2e;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">HALLWAYS STREAMS</div>
+            <div class="tagline">Premium IPTV Experience at an Affordable Price</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="hero">
+            <h2>Unlimited Entertainment at Your Fingertips</h2>
+            <p>Access thousands of live TV channels, movies, series, and sports events from around the world.</p>
+            <div class="price">Only JM$2,500/month</div>
+            
+            <div class="cta">
+                <a href="#signup" class="btn trial-btn">36 HOURS FREE TRIAL</a>
+                <a href="https://wa.me/18768386902" class="btn btn-whatsapp">Chat on WhatsApp</a>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="feature-card">
+                <h3>10,000+ Channels</h3>
+                <p>Access a vast selection of international channels including sports, news, entertainment, and more.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Premium Content</h3>
+                <p>Enjoy the latest movies, TV series, and pay-per-view events without extra charges.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Multi-Device Support</h3>
+                <p>Watch on your TV, smartphone, tablet, or computer with our easy-to-use apps.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>24/7 Customer Support</h3>
+                <p>Our team is always ready to assist you with any questions or technical issues.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>High Quality Streams</h3>
+                <p>Experience crystal clear HD and 4K content with minimal buffering.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Regular Updates</h3>
+                <p>We constantly add new channels and features to enhance your viewing experience.</p>
+            </div>
+        </section>
+        
+        <section id="signup" class="cta">
+            <h2>Ready to Experience Hallways Streams?</h2>
+            <p>Start with our 36-hour free trial and see the difference for yourself!</p>
+            <form action="mailto:hallways.streams@gmail.com" method="post" enctype="text/plain" style="margin-top: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; border: none;">
+                <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; border: none;">
+                <input type="tel" name="phone" placeholder="Your Phone Number" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; border: none;">
+                <textarea name="message" placeholder="Any special requests?" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; border: none; height: 100px;"></textarea>
+                <button type="submit" class="btn">SEND TRIAL REQUEST</button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Hallways Streams. All rights reserved.</p>
+            <div class="contact-info">
+                <p>Email: hallways.streams@gmail.com</p>
+                <p>WhatsApp: 876-838-6902</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
