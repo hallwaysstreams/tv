@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallways Streams - IPTV Service Sign Up</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .tagline {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .signup-form {
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #3a3a3a;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #9d50bb;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(157, 80, 187, 0.4);
+        }
+        
+        .package-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .package {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: #3a3a3a;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .package:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package.selected {
+            border-color: #9d50bb;
+            background-color: #4a4a4a;
+        }
+        
+        .package h3 {
+            margin-top: 0;
+            color: #9d50bb;
+        }
+        
+        .package .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .features {
+            text-align: left;
+            padding-left: 20px;
+        }
+        
+        .features li {
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .package-options {
+                flex-direction: column;
+            }
+            
+            .package {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hallways Streams</h1>
+            <p class="tagline">Premium IPTV Service - Unlimited Entertainment</p>
+        </header>
+        
+        <div class="signup-form">
+            <form action="https://formsubmit.co/hallways.streams@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Hallways Streams Signup">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                
+                <h2>Choose Your Package</h2>
+                <div class="package-options">
+                    <div class="package" onclick="selectPackage('basic')">
+                        <h3>Basic</h3>
+                        <div class="price">$9.99/month</div>
+                        <ul class="features">
+                            <li>100+ Channels</li>
+                            <li>Standard Definition</li>
+                            <li>1 Device</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="package selected" onclick="selectPackage('standard')">
+                        <h3>Standard</h3>
+                        <div class="price">$14.99/month</div>
+                        <ul class="features">
+                            <li>300+ Channels</li>
+                            <li>HD Quality</li>
+                            <li>2 Devices</li>
+                            <li>24/7 Support</li>
+                            <li>VOD Library</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="package" onclick="selectPackage('premium')">
+                        <h3>Premium</h3>
+                        <div class="price">$19.99/month</div>
+                        <ul class="features">
+                            <li>500+ Channels</li>
+                            <li>Full HD & 4K</li>
+                            <li>5 Devices</li>
+                            <li>24/7 Support</li>
+                            <li>VOD Library</li>
+                            <li>PPV Events</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <input type="hidden" id="selectedPackage" name="package" value="Standard">
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="" disabled selected>Select payment method</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="PayPal">PayPal</option>
+                        <option value="Cryptocurrency">Cryptocurrency</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Notes (Optional)</label>
+                    <input type="text" id="message" name="message">
+                </div>
+                
+                <button type="submit">Sign Up Now</button>
+            </form>
+        </div>
+        
+        <footer>
+            <p>© 2023 Hallways Streams. All rights reserved.</p>
+            <p>Contact: hallways.streams@gmail.com</p>
+        </footer>
+    </div>
+    
+    <script>
+        function selectPackage(package) {
+            const packages = document.querySelectorAll('.package');
+            packages.forEach(pkg => pkg.classList.remove('selected'));
+            
+            let selectedPkg;
+            switch(package) {
+                case 'basic':
+                    document.getElementById('selectedPackage').value = 'Basic';
+                    selectedPkg = packages[0];
+                    break;
+                case 'standard':
+                    document.getElementById('selectedPackage').value = 'Standard';
+                    selectedPkg = packages[1];
+                    break;
+                case 'premium':
+                    document.getElementById('selectedPackage').value = 'Premium';
+                    selectedPkg = packages[2];
+                    break;
+            }
+            
+            selectedPkg.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
