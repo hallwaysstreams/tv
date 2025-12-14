@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallways Streams - Premium IPTV Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a73e8;
+            --secondary: #ff6b35;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://images.unsplash.com/photo-1580130742580-50d21e0d7b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0 5rem;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eaeaea;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        /* Trial Section */
+        .trial {
+            padding: 5rem 0;
+            background-color: #f1f5f9;
+        }
+        
+        .trial-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .trial-content {
+            flex: 1;
+        }
+        
+        .trial-form-container {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .form-submit:hover {
+            background-color: #e55a2b;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .paypal-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #003087;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .paypal-button:hover {
+            background-color: #001f6d;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .trial-container {
+                flex-direction: column;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            .mobile-menu ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trial-form-container {
+                padding: 1.5rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <h1>Hallways <span>Streams</span></h1>
+            </div>
+            <nav class="desktop-menu">                      
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#trial">Free Trial</a></li>
+                </ul>
+            </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Premium TV Streaming Experience</h2>
+            <p>Watch over 7,000 live TV channels, optional adult package, movies and series in HD and 4K quality on any device, anywhere in the world.</p>
+            <a href="#trial" class="cta-button">Start Your 36-Hour Free Trial</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Hallways Streams?</h2>
+                <p>Discover the features that make our TV service the best choice for entertainment</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>7,000+ Channels</h3>
+                    <p>Access a vast selection of international channels including sports, news, optional adult, entertainment, and kids programming from around the world.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>40,000+ VOD Content</h3>
+                    <p>Massive library of movies, TV series, and exclusive content available on-demand in multiple languages and genres.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h3>Catch-Up & PVR</h3>
+                    <p>Never miss your favorite shows with our Catch-Up feature and cloud-based PVR recording functionality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Multi-Device Support</h3>
+                    <p>Watch on any device - Smart TV, Android Box, Firestick, Mobile, Tablet, or PC with easy setup and stable connection.</p>
+                </div>
+                                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available around the clock to help you with setup, troubleshooting, and any questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trial Section -->
+    <section class="trial" id="trial">
+        <div class="container">
+            <div class="section-title">
+                <h2>36-Hour Free Trial</h2>
+                <p>Experience Hallways Streams risk-free. No credit card required.</p>
+            </div>
+            
+            <div class="trial-container">
+                <div class="trial-content">
+                    <h3>Test Our Premium Service</h3>
+                    <p>Get full access to all features during your 36-hour trial period:</p>
+                    <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.8rem;">Access to all live TV and optional adult channels</li>
+                        <li style="margin-bottom: 0.8rem;">Full VOD library (movies & series)</li>
+                        <li style="margin-bottom: 0.8rem;">Catch-Up TV functionality</li>
+                        <li style="margin-bottom: 0.8rem;">24/7 customer support</li>
+                        <li>Multiple device compatibility</li>
+                    </ul>
+                    <p>After the trial, continue with our affordable subscription plans starting at just $15/2500JMD/month.</p>
+                </div>
+                
+                <div class="trial-form-container">
+                    <h3>Request Your Free Trial</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--gray);">Fill out the form below and we'll send your trial credentials within 1 hour.</p>
+                    
+                    <form id="trialForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="device">Device Type</label>
+                            <select id="device" name="device" required>
+                                <option value="" disabled selected>Select your device</option>
+                                <option value="Android TV/Box">Android TV/Box</option>
+                                <option value="Firestick">Amazon Firestick</option>
+                                <option value="Smart TV">Smart TV (Samsung/LG)</option>
+                                <option value="iPhone/iPad">iPhone/iPad</option>
+                                <option value="Android Phone">Android Phone</option>
+                                <option value="Mag Box">Mag Box</option>
+                                <option value="Other">Other Device</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">Get My Free Trial</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Affordable Subscription Plans</h2>
+                <p>Choose the plan that fits your needs and budget</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">After your free trial, continue enjoying Hallways Streams with our flexible subscription options.</p>
+                
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 3rem;">
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--primary);">1 Month</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--dark); margin: 1rem 0;">$15/2,500JMD</div>
+                        <p>Perfect for trying out our service</p>
+                    </div>
+                    
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--primary);">3 Months</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--dark); margin: 1rem 0;">$40/6,500JMD</div>                        
+                    </div>
+                    
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--primary);">12 Months</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--dark); margin: 1rem 0;">$120/20,000JMD</div>
+                        <p>Best value </p>
+                    </div>
+                </div>
+                
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 1.5rem;">
+                <div class="logo-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <h1>Hallways <span>Streams</span></h1>
+            </div>
+            
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9;">Premium TV service with worldwide coverage, extensive channel selection, and reliable streaming quality.</p>
+           
+            
+            <div>
+                2024 Hallways Streams.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/18768386902?text=Hi%20Hallways%20Streams,%20I'm%20interested%20in%20your%20IPTV%20service" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+            
+            // Change icon
+            const icon = this.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Form submission
+        document.getElementById('trialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const device = document.getElementById('device').value;
+            
+            // Create mailto link
+            const subject = `Free Trial Request - ${name}`;
+            const body = `Hello Hallways Streams,\n\nI would like to request a 36-hour free trial for your IPTV service.\n\nMy details:\nName: ${name}\nEmail: ${email}\nDevice Type: ${device}\n\nPlease send me the trial credentials. Thank you!`;
+            
+            const mailtoLink = `mailto:hallways.streams@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open default email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation message
+            alert(`Thank you ${name}! Your free trial request has been submitted. Please check your email for further instructions.`);
+            
+            // Reset form
+            document.getElementById('trialForm').reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+                
+                if (mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                }
+                
+                // Smooth scroll
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = 'var(--dark)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
